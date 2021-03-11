@@ -10,11 +10,14 @@ using System.Windows.Forms;
 
 namespace Cukraszda
 {
-    public partial class Form1 : Form
+    public partial class FoForm : Form
     {
-        public Form1()
+        public FoForm()
         {
             InitializeComponent();
+            lbl_LegdragabbSuti.Text = "Legdrágább süteményünk";
+            lbl_Legolcsobb.Text = "Legolcsóbb süteményünk";
+            lblTipus.Text = "Süti tipusa:";
         }
     }
 }
