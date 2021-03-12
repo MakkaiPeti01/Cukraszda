@@ -14,15 +14,56 @@ namespace Cukraszda
     public partial class FoForm : Form
     {
         static List<Suti> adatok = new List<Suti>();
+        static Dictionary<string, string> Sutik = new Dictionary<string, string>();
         public FoForm()
         {
             InitializeComponent();
             lbl_LegdragabbSuti.Text = "Legdrágább süteményünk";
             lbl_Legolcsobb.Text = "Legolcsóbb süteményünk";
-            lblTipus.Text = "Süti tipusa:";
+            lblTipus.Text = "Süti tipusa:";        
         }
 
         private void FoForm_Load(object sender, EventArgs e)
+        {
+            Beolvasas();
+            RandomSzamSuti();
+            SutikListaban();
+            Maximum();
+            Minimum();
+            DinyertesDB();
+            Statisztika();
+        }
+
+        private static void Statisztika()
+        {
+            Dictionary<string, int> Statisztika = new Dictionary<string, int>();
+            foreach (var i in adatok)
+            {
+                if (!Statisztika.ContainsKey(i.Tipus))
+                {
+                    Statisztika.Add(i.Tipus, 1);
+                }
+                else
+                {
+                    Statisztika[i.Tipus]++;
+                }
+            }
+            StreamWriter iro = new StreamWriter("stat.csv");
+            foreach (var i in Statisztika)
+            {
+                iro.WriteLine($"{i.Key} {i.Value}");
+            }
+            iro.Close();
+        }
+
+        private void RandomSzamSuti()
+        {
+            Random r = new Random();
+            int r_Szam = r.Next(0, adatok.Count + 1);
+            tbMaiAjanlat.Text = $"Mai ajánlatunk: {adatok[r_Szam].Nev}";
+        }
+
+        private static void Beolvasas()
         {
             StreamReader sr = new StreamReader("cuki.txt");
             while (!sr.EndOfStream)
@@ -31,13 +72,23 @@ namespace Cukraszda
                 adatok.Add(new Suti(a[0], a[1], bool.Parse(a[2]), int.Parse(a[3]), a[4]));
             }
             sr.Close();
+        }
 
-            Random r = new Random();
-            int r_Szam = r.Next(0, adatok.Count + 1);
-            tbMaiAjanlat.Text = $"Mai ajánlatunk: {adatok[r_Szam].Nev}";
-            Maximum();
-            Minimum();
-            DinyertesDB();
+        private static void SutikListaban()
+        {
+            foreach (var i in adatok)
+            {
+                if (!Sutik.ContainsKey(i.Nev))
+                {
+                    Sutik.Add(i.Nev, i.Tipus);
+                }
+            }
+            StreamWriter sw = new StreamWriter("lista.txt");
+            foreach (var i in Sutik)
+            {
+                sw.WriteLine($"{i.Key} {i.Value}");
+            }
+            sw.Close();
         }
 
         private void DinyertesDB()
