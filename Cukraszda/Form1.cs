@@ -37,6 +37,20 @@ namespace Cukraszda
             tbMaiAjanlat.Text = $"Mai ajánlatunk: {adatok[r_Szam].Nev}";
             Maximum();
             Minimum();
+            DinyertesDB();
+        }
+
+        private void DinyertesDB()
+        {
+            int db = 0;
+            foreach (var i in adatok)
+            {
+                if (i.Dij == true)
+                {
+                    db++;
+                }
+            }
+            tbDijnyertesDB.Text = $"{db} féle díjnyertes édességből választhat.";
         }
 
         private void Minimum()
