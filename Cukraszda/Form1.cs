@@ -20,7 +20,12 @@ namespace Cukraszda
             InitializeComponent();
             lbl_LegdragabbSuti.Text = "Legdrágább süteményünk";
             lbl_Legolcsobb.Text = "Legolcsóbb süteményünk";
-            lblTipus.Text = "Süti tipusa:";        
+            lblTipus.Text = "Süti tipusa:";
+            lblSutiNeve.Text = "Süti neve:";
+            lblSutiTipusa.Text = "Süti tipusa:";
+            lblEgyseg.Text = "Egység:";
+            lblAr.Text = "Ár:";
+            chbDijazott.Text = "Díjazott";
         }
 
         private void FoForm_Load(object sender, EventArgs e)

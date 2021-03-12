@@ -40,6 +40,16 @@ namespace Cukraszda
             this.lblTipus = new System.Windows.Forms.Label();
             this.tbTipus = new System.Windows.Forms.TextBox();
             this.btnArajanlat = new System.Windows.Forms.Button();
+            this.lblSutiNeve = new System.Windows.Forms.Label();
+            this.lblSutiTipusa = new System.Windows.Forms.Label();
+            this.lblEgyseg = new System.Windows.Forms.Label();
+            this.lblAr = new System.Windows.Forms.Label();
+            this.chbDijazott = new System.Windows.Forms.CheckBox();
+            this.tbSutiNev = new System.Windows.Forms.TextBox();
+            this.tbSutiTipus = new System.Windows.Forms.TextBox();
+            this.tbEgyseg = new System.Windows.Forms.TextBox();
+            this.tbAr = new System.Windows.Forms.TextBox();
+            this.btnUjSuti = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbMaiAjanlat
@@ -127,11 +137,104 @@ namespace Cukraszda
             this.btnArajanlat.Text = "Árajánlat mentése";
             this.btnArajanlat.UseVisualStyleBackColor = true;
             // 
+            // lblSutiNeve
+            // 
+            this.lblSutiNeve.AutoSize = true;
+            this.lblSutiNeve.Location = new System.Drawing.Point(735, 106);
+            this.lblSutiNeve.Name = "lblSutiNeve";
+            this.lblSutiNeve.Size = new System.Drawing.Size(51, 20);
+            this.lblSutiNeve.TabIndex = 11;
+            this.lblSutiNeve.Text = "label1";
+            // 
+            // lblSutiTipusa
+            // 
+            this.lblSutiTipusa.AutoSize = true;
+            this.lblSutiTipusa.Location = new System.Drawing.Point(735, 139);
+            this.lblSutiTipusa.Name = "lblSutiTipusa";
+            this.lblSutiTipusa.Size = new System.Drawing.Size(51, 20);
+            this.lblSutiTipusa.TabIndex = 12;
+            this.lblSutiTipusa.Text = "label1";
+            // 
+            // lblEgyseg
+            // 
+            this.lblEgyseg.AutoSize = true;
+            this.lblEgyseg.Location = new System.Drawing.Point(735, 171);
+            this.lblEgyseg.Name = "lblEgyseg";
+            this.lblEgyseg.Size = new System.Drawing.Size(51, 20);
+            this.lblEgyseg.TabIndex = 13;
+            this.lblEgyseg.Text = "label1";
+            // 
+            // lblAr
+            // 
+            this.lblAr.AutoSize = true;
+            this.lblAr.Location = new System.Drawing.Point(735, 206);
+            this.lblAr.Name = "lblAr";
+            this.lblAr.Size = new System.Drawing.Size(51, 20);
+            this.lblAr.TabIndex = 14;
+            this.lblAr.Text = "label1";
+            // 
+            // chbDijazott
+            // 
+            this.chbDijazott.AutoSize = true;
+            this.chbDijazott.Location = new System.Drawing.Point(739, 274);
+            this.chbDijazott.Name = "chbDijazott";
+            this.chbDijazott.Size = new System.Drawing.Size(106, 24);
+            this.chbDijazott.TabIndex = 15;
+            this.chbDijazott.Text = "checkBox1";
+            this.chbDijazott.UseVisualStyleBackColor = true;
+            // 
+            // tbSutiNev
+            // 
+            this.tbSutiNev.Location = new System.Drawing.Point(823, 103);
+            this.tbSutiNev.Name = "tbSutiNev";
+            this.tbSutiNev.Size = new System.Drawing.Size(231, 26);
+            this.tbSutiNev.TabIndex = 16;
+            // 
+            // tbSutiTipus
+            // 
+            this.tbSutiTipus.Location = new System.Drawing.Point(823, 139);
+            this.tbSutiTipus.Name = "tbSutiTipus";
+            this.tbSutiTipus.Size = new System.Drawing.Size(231, 26);
+            this.tbSutiTipus.TabIndex = 17;
+            // 
+            // tbEgyseg
+            // 
+            this.tbEgyseg.Location = new System.Drawing.Point(823, 174);
+            this.tbEgyseg.Name = "tbEgyseg";
+            this.tbEgyseg.Size = new System.Drawing.Size(231, 26);
+            this.tbEgyseg.TabIndex = 18;
+            // 
+            // tbAr
+            // 
+            this.tbAr.Location = new System.Drawing.Point(823, 206);
+            this.tbAr.Name = "tbAr";
+            this.tbAr.Size = new System.Drawing.Size(231, 26);
+            this.tbAr.TabIndex = 19;
+            // 
+            // btnUjSuti
+            // 
+            this.btnUjSuti.Location = new System.Drawing.Point(823, 336);
+            this.btnUjSuti.Name = "btnUjSuti";
+            this.btnUjSuti.Size = new System.Drawing.Size(127, 37);
+            this.btnUjSuti.TabIndex = 20;
+            this.btnUjSuti.Text = "Új süti felvétele";
+            this.btnUjSuti.UseVisualStyleBackColor = true;
+            // 
             // FoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 514);
+            this.ClientSize = new System.Drawing.Size(1066, 514);
+            this.Controls.Add(this.btnUjSuti);
+            this.Controls.Add(this.tbAr);
+            this.Controls.Add(this.tbEgyseg);
+            this.Controls.Add(this.tbSutiTipus);
+            this.Controls.Add(this.tbSutiNev);
+            this.Controls.Add(this.chbDijazott);
+            this.Controls.Add(this.lblAr);
+            this.Controls.Add(this.lblEgyseg);
+            this.Controls.Add(this.lblSutiTipusa);
+            this.Controls.Add(this.lblSutiNeve);
             this.Controls.Add(this.btnArajanlat);
             this.Controls.Add(this.tbTipus);
             this.Controls.Add(this.lblTipus);
@@ -167,6 +270,16 @@ namespace Cukraszda
         private System.Windows.Forms.Label lblTipus;
         private System.Windows.Forms.TextBox tbTipus;
         private System.Windows.Forms.Button btnArajanlat;
+        private System.Windows.Forms.Label lblSutiNeve;
+        private System.Windows.Forms.Label lblSutiTipusa;
+        private System.Windows.Forms.Label lblEgyseg;
+        private System.Windows.Forms.Label lblAr;
+        private System.Windows.Forms.CheckBox chbDijazott;
+        private System.Windows.Forms.TextBox tbSutiNev;
+        private System.Windows.Forms.TextBox tbSutiTipus;
+        private System.Windows.Forms.TextBox tbEgyseg;
+        private System.Windows.Forms.TextBox tbAr;
+        private System.Windows.Forms.Button btnUjSuti;
     }
 }
 
