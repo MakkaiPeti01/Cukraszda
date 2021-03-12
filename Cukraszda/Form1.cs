@@ -188,6 +188,31 @@ namespace Cukraszda
                 }
                 MessageBox.Show($"{Arak.Count} db sütit irtam az árajanlat txtbe\n Átlagár: {(double)sum / Arak.Count}");
                 iro.Close();
-            }     
+            }
+
+        private void btnUjSuti_Click(object sender, EventArgs e)
+        {
+            if (tbSutiNev.Text.Length == 0 || tbSutiTipus.Text.Length == 0 || tbEgyseg.Text.Length == 0 || tbAr.Text.Length == 0)
+            {
+                MessageBox.Show("Nem adtál meg minden adatott!");
+            }
+            bool dijazott = false;
+            if (chbDijazott.Checked)
+            {
+                dijazott = true;
+            }
+
+            adatok.Add(new Suti(tbSutiNev.Text, tbSutiTipus.Text, dijazott, int.Parse(tbAr.Text), tbEgyseg.Text));
+            MessageBox.Show("Az állomény bővítése sikeres volt");
+
+            StreamWriter iro = new StreamWriter("cukiV2.txt");
+
+            for (int i = 0; i < adatok.Count; i++)
+            {
+                iro.WriteLine($"{adatok[i].Nev} {adatok[i].Tipus} {adatok[i].Dij} {adatok[i].Ar} {adatok[i].MertekEgyseg}");
+            }
+
+            iro.Close();
         }
+    }
     }

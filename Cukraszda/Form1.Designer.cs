@@ -29,6 +29,7 @@ namespace Cukraszda
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FoForm));
             this.tbMaiAjanlat = new System.Windows.Forms.TextBox();
             this.tbDijnyertesDB = new System.Windows.Forms.TextBox();
             this.lbl_LegdragabbSuti = new System.Windows.Forms.Label();
@@ -50,6 +51,8 @@ namespace Cukraszda
             this.tbEgyseg = new System.Windows.Forms.TextBox();
             this.tbAr = new System.Windows.Forms.TextBox();
             this.btnUjSuti = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tbMaiAjanlat
@@ -220,12 +223,23 @@ namespace Cukraszda
             this.btnUjSuti.TabIndex = 20;
             this.btnUjSuti.Text = "Új süti felvétele";
             this.btnUjSuti.UseVisualStyleBackColor = true;
+            this.btnUjSuti.Click += new System.EventHandler(this.btnUjSuti_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(401, 49);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(160, 160);
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
             // 
             // FoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1066, 514);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnUjSuti);
             this.Controls.Add(this.tbAr);
             this.Controls.Add(this.tbEgyseg);
@@ -253,6 +267,7 @@ namespace Cukraszda
             this.Name = "FoForm";
             this.Text = "Cukraszda";
             this.Load += new System.EventHandler(this.FoForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,6 +296,7 @@ namespace Cukraszda
         private System.Windows.Forms.TextBox tbEgyseg;
         private System.Windows.Forms.TextBox tbAr;
         private System.Windows.Forms.Button btnUjSuti;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
