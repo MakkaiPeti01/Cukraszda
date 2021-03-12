@@ -92,14 +92,14 @@ namespace Cukraszda
             // 
             this.tbLegdragabbTul.Location = new System.Drawing.Point(401, 221);
             this.tbLegdragabbTul.Name = "tbLegdragabbTul";
-            this.tbLegdragabbTul.Size = new System.Drawing.Size(120, 26);
+            this.tbLegdragabbTul.Size = new System.Drawing.Size(192, 26);
             this.tbLegdragabbTul.TabIndex = 6;
             // 
             // tb_LegolcsobbTul
             // 
             this.tb_LegolcsobbTul.Location = new System.Drawing.Point(401, 315);
             this.tb_LegolcsobbTul.Name = "tb_LegolcsobbTul";
-            this.tb_LegolcsobbTul.Size = new System.Drawing.Size(120, 26);
+            this.tb_LegolcsobbTul.Size = new System.Drawing.Size(192, 26);
             this.tb_LegolcsobbTul.TabIndex = 7;
             // 
             // lblTipus
@@ -148,6 +148,7 @@ namespace Cukraszda
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FoForm";
             this.Text = "Cukraszda";
+            this.Load += new System.EventHandler(this.FoForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
