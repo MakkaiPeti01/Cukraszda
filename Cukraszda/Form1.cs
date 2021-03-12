@@ -38,6 +38,7 @@ namespace Cukraszda
             DinyertesDB();
             Statisztika();
         }
+    
 
         private static void Statisztika()
         {
@@ -66,6 +67,7 @@ namespace Cukraszda
             Random r = new Random();
             int r_Szam = r.Next(0, adatok.Count + 1);
             tbMaiAjanlat.Text = $"Mai ajánlatunk: {adatok[r_Szam].Nev}";
+            tbMaiAjanlat.ReadOnly = true;
         }
 
         private static void Beolvasas()
@@ -107,6 +109,7 @@ namespace Cukraszda
                 }
             }
             tbDijnyertesDB.Text = $"{db} féle díjnyertes édességből választhat.";
+            tbDijnyertesDB.ReadOnly = true;
         }
 
         private void Minimum()
@@ -125,6 +128,8 @@ namespace Cukraszda
             }
             tbLegolcsobb.Text = $"{maxNev}";
             tb_LegolcsobbTul.Text = $"{max} Ft/ {mertek} ";
+            tbLegolcsobb.ReadOnly = true;
+            tb_LegolcsobbTul.ReadOnly = true;
         }
 
         private void Maximum()
@@ -143,6 +148,46 @@ namespace Cukraszda
             }
             tbLegdragabb.Text = $"{maxNev}";
             tbLegdragabbTul.Text = $"{max} Ft/ {mertek}";
+            tbLegdragabb.ReadOnly = true;
+            tbLegdragabbTul.ReadOnly = true;
+        }
+
+        private void btnArajanlat_Click(object sender, EventArgs e)
+        {
+            
+                List<int> Arak = new List<int>();
+                double sum = 0;
+                StreamWriter iro = new StreamWriter("arajanlat.txt");
+                foreach (var i in adatok)
+                {
+                    if (tbTipus.Text == i.Tipus)
+                    {
+                        Arak.Add(i.Ar);
+                    }
+                    else if (tbTipus.Text.Length==0)
+                    {
+                        MessageBox.Show("Nem írtál be sütit!");
+                        break;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nincs ilyen tipusú sütink!");
+                        break;
+                    }
+                }
+                foreach (var a in Arak)
+                {
+                    sum += a;
+                }
+                for (int i = 0; i < adatok.Count; i++)
+                {
+                    if (tbTipus.Text == adatok[i].Tipus)
+                    {
+                        iro.WriteLine($"{adatok[i].Nev} {adatok[i].Ar} {adatok[i].MertekEgyseg}");
+                    }
+                }
+                MessageBox.Show($"{Arak.Count} db sütit irtam az árajanlat txtbe\n Átlagár: {(double)sum / Arak.Count}");
+                iro.Close();
+            }     
         }
     }
-}

@@ -136,6 +136,7 @@ namespace Cukraszda
             this.btnArajanlat.TabIndex = 10;
             this.btnArajanlat.Text = "Árajánlat mentése";
             this.btnArajanlat.UseVisualStyleBackColor = true;
+            this.btnArajanlat.Click += new System.EventHandler(this.btnArajanlat_Click);
             // 
             // lblSutiNeve
             // 
